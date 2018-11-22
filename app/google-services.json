@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "111253332602",
+    "firebase_url": "https://ondemandservicefinalapp.firebaseio.com",
+    "project_id": "ondemandservicefinalapp",
+    "storage_bucket": "ondemandservicefinalapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111253332602:android:8e5490c7a4b043e8",
+        "android_client_info": {
+          "package_name": "yazdaniscodelab.ondemandfinalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111253332602-v8m78k8s03be9uqkk4i7clh8q86nu3e3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHNpURtx_nnagrF8o8q23B024UQ1L_ink"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
