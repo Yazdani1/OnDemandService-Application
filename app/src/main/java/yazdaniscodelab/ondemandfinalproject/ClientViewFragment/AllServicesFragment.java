@@ -1,6 +1,7 @@
 package yazdaniscodelab.ondemandfinalproject.ClientViewFragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -16,6 +18,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesHomeServiceActivity;
+import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesTuitionServiceActivity;
+import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServicesItandSoftwareActivity;
 import yazdaniscodelab.ondemandfinalproject.Model.Services;
 import yazdaniscodelab.ondemandfinalproject.R;
 import yazdaniscodelab.ondemandfinalproject.ServiceCreateFragment.YourAllServiceFragment;
@@ -28,7 +33,6 @@ public class AllServicesFragment extends Fragment {
     private FirebaseAuth mAuth;
     private DatabaseReference publicmHomeServiceCreate;
 
-    private DatabaseReference tutionservice;
     private DatabaseReference PublicTuitionServiceCreate;
 
 
@@ -37,6 +41,12 @@ public class AllServicesFragment extends Fragment {
     private RecyclerView mRecyclerHomeService;
     private RecyclerView mRecyclerTution;
 
+    //Button...
+
+    private Button homeService;
+    private Button tuitionService;
+    private Button itandsoftwareService;
+
 
 
     @Override
@@ -44,6 +54,33 @@ public class AllServicesFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View myview=inflater.inflate(R.layout.fragment_all_services, container, false);
+
+
+        homeService=myview.findViewById(R.id.home_Service_cat);
+
+        tuitionService=myview.findViewById(R.id.tution_service);
+
+        itandsoftwareService=myview.findViewById(R.id.it_software_service);
+
+        homeService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CatServciesHomeServiceActivity.class));
+            }
+        });
+
+        tuitionService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CatServciesTuitionServiceActivity.class));
+            }
+        });
+        itandsoftwareService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CatServicesItandSoftwareActivity.class));
+            }
+        });
 
 
         mRecyclerHomeService=myview.findViewById(R.id.recycler_home_serview);
@@ -74,7 +111,6 @@ public class AllServicesFragment extends Fragment {
 
         mRecyclerTution.setHasFixedSize(true);
         mRecyclerTution.setLayoutManager(layoutManagerTution);
-
 
 
         return myview;

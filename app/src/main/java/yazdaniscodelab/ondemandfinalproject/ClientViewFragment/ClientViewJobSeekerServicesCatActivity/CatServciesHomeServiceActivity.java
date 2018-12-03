@@ -1,4 +1,4 @@
-package yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker;
+package yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,30 +9,37 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker.CatHomeServiceActivity;
 import yazdaniscodelab.ondemandfinalproject.Model.PostJob;
 import yazdaniscodelab.ondemandfinalproject.R;
 
-public class CatHomeServiceActivity extends AppCompatActivity {
+public class CatServciesHomeServiceActivity extends AppCompatActivity {
 
-    private DatabaseReference mHomeServiewDb;
+//    This file is for services of job seeker..this view can see client from client view
+//
+//    and when they will select home service category then they will see this file.
+
+
+    private DatabaseReference publicmHomeServiceCreate;
 
     private Toolbar toolbar;
 
     //recycler
     private RecyclerView mRecyclerHomeService;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cat_home_service);
+        setContentView(R.layout.activity_cat_servcies_home_service);
 
         toolbar=findViewById(R.id.cat_home_service);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Home Service Job");
+        getSupportActionBar().setTitle("Home Services");
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
@@ -40,7 +47,7 @@ public class CatHomeServiceActivity extends AppCompatActivity {
 
         //databse
 
-        mHomeServiewDb= FirebaseDatabase.getInstance().getReference().child("Home_public");
+        publicmHomeServiceCreate=FirebaseDatabase.getInstance().getReference().child("PublicHomeServiceCreate");
 
 
         //Recycler Home Service
@@ -58,16 +65,16 @@ public class CatHomeServiceActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<PostJob,MyViewHolder>adapter=new FirebaseRecyclerAdapter<PostJob, MyViewHolder>
+        FirebaseRecyclerAdapter<PostJob,CatServciesHomeServiceActivity.MyViewHolder> adapter=new FirebaseRecyclerAdapter<PostJob, CatServciesHomeServiceActivity.MyViewHolder>
                 (
                         PostJob.class,
                         R.layout.cat_item_layout_design,
-                        MyViewHolder.class,
-                        mHomeServiewDb
+                        CatServciesHomeServiceActivity.MyViewHolder.class,
+                        publicmHomeServiceCreate
 
                 ) {
             @Override
-            protected void populateViewHolder(MyViewHolder viewHolder, PostJob model, int position) {
+            protected void populateViewHolder(CatServciesHomeServiceActivity.MyViewHolder viewHolder, PostJob model, int position) {
 
                 viewHolder.setDate(model.getDate());
                 viewHolder.setJobTitle(model.getTitle());

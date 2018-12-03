@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker.CatItandSoftwareJobActivity">
+    tools:context="yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServicesItandSoftwareActivity">
 
     <include layout="@layout/toolbar"
         android:id="@+id/cat_home_service"/>
@@ -17,5 +17,6 @@
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
+
 
 </LinearLayout>

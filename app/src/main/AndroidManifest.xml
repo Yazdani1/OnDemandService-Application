@@ -22,9 +22,38 @@
         <activity android:name=".ClientViewActivity.ClientViewHomeActivity" />
         <activity android:name=".JobDetailsActivity" />
         <activity android:name=".TutionJobDetailsActivity" />
-        <activity android:name=".CatActivityForJobSeeker.CatHomeServiceActivity" />
-        <activity android:name=".CatActivityForJobSeeker.CatTutionServiceActivity" />
-        <activity android:name=".CatActivityForJobSeeker.CatItandSoftwareJobActivity"></activity>
+
+        <activity android:name=".CatActivityForJobSeeker.CatHomeServiceActivity"
+            android:parentActivityName=".HomeActivity"
+            />
+
+        <activity android:name=".CatActivityForJobSeeker.CatTutionServiceActivity"
+            android:parentActivityName=".HomeActivity"
+            />
+
+        <activity android:name=".CatActivityForJobSeeker.CatItandSoftwareJobActivity"
+            android:parentActivityName=".HomeActivity"
+            />
+
+        <activity android:name=".CatActivityForJobSeeker.CatActivityDetailsJobPOST.CatHomeServiceDetailsActivity" />
+
+        <activity android:name=".CatActivityForJobSeeker.CatActivityDetailsJobPOST.CatTuiTionServiceDetailsActivity" />
+
+        <activity android:name=".CatActivityForJobSeeker.CatActivityDetailsJobPOST.CatITandSoftwareServiceDetailsActivity" />
+
+        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesHomeServiceActivity"
+            android:parentActivityName=".ClientViewActivity.ClientViewHomeActivity"
+
+            />
+
+        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesTuitionServiceActivity"
+            android:parentActivityName=".ClientViewActivity.ClientViewHomeActivity"
+            />
+
+        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServicesItandSoftwareActivity"
+            android:parentActivityName=".ClientViewActivity.ClientViewHomeActivity"
+
+            />
     </application>
 
 </manifest>

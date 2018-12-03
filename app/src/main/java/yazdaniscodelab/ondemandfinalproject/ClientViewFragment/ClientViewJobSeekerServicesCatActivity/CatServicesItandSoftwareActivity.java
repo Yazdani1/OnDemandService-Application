@@ -1,4 +1,4 @@
-package yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker;
+package yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,16 +9,16 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import yazdaniscodelab.ondemandfinalproject.Model.PostJob;
 import yazdaniscodelab.ondemandfinalproject.R;
 
-public class CatHomeServiceActivity extends AppCompatActivity {
+public class CatServicesItandSoftwareActivity extends AppCompatActivity {
 
-    private DatabaseReference mHomeServiewDb;
+
+    private DatabaseReference PublicItAndSoftwareCreateService;
 
     private Toolbar toolbar;
 
@@ -28,11 +28,13 @@ public class CatHomeServiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cat_home_service);
+        setContentView(R.layout.activity_cat_services_itand_software);
+
 
         toolbar=findViewById(R.id.cat_home_service);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Home Service Job");
+        getSupportActionBar().setTitle("It and Software Services");
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
@@ -40,7 +42,7 @@ public class CatHomeServiceActivity extends AppCompatActivity {
 
         //databse
 
-        mHomeServiewDb= FirebaseDatabase.getInstance().getReference().child("Home_public");
+        PublicItAndSoftwareCreateService=FirebaseDatabase.getInstance().getReference().child("PublicITandSoftwareCreate");
 
 
         //Recycler Home Service
@@ -51,23 +53,23 @@ public class CatHomeServiceActivity extends AppCompatActivity {
 
         mRecyclerHomeService.setHasFixedSize(true);
         mRecyclerHomeService.setLayoutManager(layoutManagerHomeService);
-
     }
+
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<PostJob,MyViewHolder>adapter=new FirebaseRecyclerAdapter<PostJob, MyViewHolder>
+        FirebaseRecyclerAdapter<PostJob,CatServicesItandSoftwareActivity.MyViewHolder> adapter=new FirebaseRecyclerAdapter<PostJob, CatServicesItandSoftwareActivity.MyViewHolder>
                 (
                         PostJob.class,
                         R.layout.cat_item_layout_design,
-                        MyViewHolder.class,
-                        mHomeServiewDb
+                        CatServicesItandSoftwareActivity.MyViewHolder.class,
+                        PublicItAndSoftwareCreateService
 
                 ) {
             @Override
-            protected void populateViewHolder(MyViewHolder viewHolder, PostJob model, int position) {
+            protected void populateViewHolder(CatServicesItandSoftwareActivity.MyViewHolder viewHolder, PostJob model, int position) {
 
                 viewHolder.setDate(model.getDate());
                 viewHolder.setJobTitle(model.getTitle());
