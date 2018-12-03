@@ -21,7 +21,10 @@
         <activity android:name=".CreateProfielActivity" />
         <activity android:name=".ClientViewActivity.ClientViewHomeActivity" />
         <activity android:name=".JobDetailsActivity" />
-        <activity android:name=".TutionJobDetailsActivity"></activity>
+        <activity android:name=".TutionJobDetailsActivity" />
+        <activity android:name=".CatActivityForJobSeeker.CatHomeServiceActivity" />
+        <activity android:name=".CatActivityForJobSeeker.CatTutionServiceActivity" />
+        <activity android:name=".CatActivityForJobSeeker.CatItandSoftwareJobActivity"></activity>
     </application>
 
 </manifest>

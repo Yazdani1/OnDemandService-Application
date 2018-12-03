@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker.CatHomeServiceActivity;
+import yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker.CatItandSoftwareJobActivity;
+import yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker.CatTutionServiceActivity;
 import yazdaniscodelab.ondemandfinalproject.JobDetailsActivity;
 import yazdaniscodelab.ondemandfinalproject.Model.PostJob;
 import yazdaniscodelab.ondemandfinalproject.R;
@@ -39,6 +43,11 @@ public class AllJobFragment extends Fragment {
     private RecyclerView mRecyclerHomeService;
     private RecyclerView mRecyclerTution;
 
+    //Category Button
+    private Button btnHomeService;
+    private Button btnTuitionService;
+    private Button btnItandSoftwareService;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +57,35 @@ public class AllJobFragment extends Fragment {
 
         mRecyclerHomeService=myview.findViewById(R.id.recycler_home_serview);
         mRecyclerTution=myview.findViewById(R.id.recycler_tution_service);
+
+        //Button..
+        btnHomeService=myview.findViewById(R.id.home_Service_cat);
+
+        btnTuitionService=myview.findViewById(R.id.tution_service);
+
+        btnItandSoftwareService=myview.findViewById(R.id.it_software_service);
+
+        //onlick listener..
+        btnHomeService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CatHomeServiceActivity.class));
+            }
+        });
+
+        btnTuitionService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CatTutionServiceActivity.class));
+            }
+        });
+
+        btnItandSoftwareService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), CatItandSoftwareJobActivity.class));
+            }
+        });
 
         //Firebase..
 
