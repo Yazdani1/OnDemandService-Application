@@ -1,5 +1,6 @@
 package yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,7 +14,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker.CatHomeServiceActivity;
+import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_HomeServiceDetailsActivity;
+import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.JobSeekerServiceDetailsActivity.Js_TuitionServiceDetailsActivity;
 import yazdaniscodelab.ondemandfinalproject.Model.PostJob;
+import yazdaniscodelab.ondemandfinalproject.Model.Services;
 import yazdaniscodelab.ondemandfinalproject.R;
 
 public class CatServciesHomeServiceActivity extends AppCompatActivity {
@@ -65,21 +69,36 @@ public class CatServciesHomeServiceActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<PostJob,CatServciesHomeServiceActivity.MyViewHolder> adapter=new FirebaseRecyclerAdapter<PostJob, CatServciesHomeServiceActivity.MyViewHolder>
+        FirebaseRecyclerAdapter<Services,CatServciesHomeServiceActivity.MyViewHolder> adapter=new FirebaseRecyclerAdapter<Services, CatServciesHomeServiceActivity.MyViewHolder>
                 (
-                        PostJob.class,
+                        Services.class,
                         R.layout.cat_item_layout_design,
                         CatServciesHomeServiceActivity.MyViewHolder.class,
                         publicmHomeServiceCreate
 
                 ) {
             @Override
-            protected void populateViewHolder(CatServciesHomeServiceActivity.MyViewHolder viewHolder, PostJob model, int position) {
+            protected void populateViewHolder(CatServciesHomeServiceActivity.MyViewHolder viewHolder, final Services model, int position) {
 
                 viewHolder.setDate(model.getDate());
                 viewHolder.setJobTitle(model.getTitle());
                 viewHolder.setJobDescription(model.getDescription());
                 viewHolder.setBudget(model.getBudget());
+
+                viewHolder.myview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent=new Intent(getApplicationContext(), Js_Cat_HomeServiceDetailsActivity.class);
+
+                        intent.putExtra("title",model.getTitle());
+                        intent.putExtra("budget",model.getBudget());
+                        intent.putExtra("skills",model.getSkill());
+                        intent.putExtra("phone",model.getPhone());
+                        intent.putExtra("description",model.getDescription());
+                        startActivity(intent);
+                    }
+                });
+
 
             }
         };

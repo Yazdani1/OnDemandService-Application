@@ -21,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesHomeServiceActivity;
 import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesTuitionServiceActivity;
 import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServicesItandSoftwareActivity;
+import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.JobSeekerServiceDetailsActivity.Js_HomeServiceDetailsActivity;
+import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.JobSeekerServiceDetailsActivity.Js_TuitionServiceDetailsActivity;
 import yazdaniscodelab.ondemandfinalproject.Model.Services;
 import yazdaniscodelab.ondemandfinalproject.R;
 import yazdaniscodelab.ondemandfinalproject.ServiceCreateFragment.YourAllServiceFragment;
@@ -130,12 +132,28 @@ public class AllServicesFragment extends Fragment {
 
                 ) {
             @Override
-            protected void populateViewHolder(AllServicesFragment.Allservice_HomeService viewHolder, Services model, int position) {
+            protected void populateViewHolder(AllServicesFragment.Allservice_HomeService viewHolder, final Services model, int position) {
 
                 viewHolder.setTitle(model.getTitle());
                 viewHolder.setDescripton(model.getDescription());
                 viewHolder.setDate(model.getDate());
                 viewHolder.setBudget(model.getBudget());
+
+                viewHolder.mHomeServiceView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent=new Intent(getActivity(), Js_HomeServiceDetailsActivity.class);
+
+                        intent.putExtra("title",model.getTitle());
+                        intent.putExtra("budget",model.getBudget());
+                        intent.putExtra("skills",model.getSkill());
+                        intent.putExtra("phone",model.getPhone());
+                        intent.putExtra("description",model.getDescription());
+                        startActivity(intent);
+
+
+                    }
+                });
 
             }
         };
@@ -152,11 +170,28 @@ public class AllServicesFragment extends Fragment {
 
                 ) {
             @Override
-            protected void populateViewHolder(AllServicesFragment.Allservice_TutionService viewHolder, Services model, int position) {
+            protected void populateViewHolder(AllServicesFragment.Allservice_TutionService viewHolder,final Services model, int position) {
                 viewHolder.setTitle(model.getTitle());
                 viewHolder.setDescripton(model.getDescription());
                 viewHolder.setDate(model.getDate());
                 viewHolder.setBudget(model.getBudget());
+
+                viewHolder.mTuiTionService.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent=new Intent(getActivity(), Js_TuitionServiceDetailsActivity.class);
+
+                        intent.putExtra("title",model.getTitle());
+                        intent.putExtra("budget",model.getBudget());
+                        intent.putExtra("skills",model.getSkill());
+                        intent.putExtra("phone",model.getPhone());
+                        intent.putExtra("description",model.getDescription());
+                        startActivity(intent);
+
+                    }
+                });
+
             }
         };
 
@@ -199,29 +234,29 @@ public class AllServicesFragment extends Fragment {
 
 
     public static class Allservice_TutionService extends RecyclerView.ViewHolder{
-        View mHomeServiceView;
+        View mTuiTionService;
         public Allservice_TutionService(View itemView) {
             super(itemView);
-            mHomeServiceView=itemView;
+            mTuiTionService=itemView;
         }
 
         public void setTitle(String title){
-            TextView mtitle=mHomeServiceView.findViewById(R.id.job_title);
+            TextView mtitle=mTuiTionService.findViewById(R.id.job_title);
             mtitle.setText(title);
         }
 
         public void setBudget(String budget){
-            TextView mBudget=mHomeServiceView.findViewById(R.id.job_budget);
+            TextView mBudget=mTuiTionService.findViewById(R.id.job_budget);
             mBudget.setText("TK."+budget);
         }
 
         public void setDescripton(String descripton){
-            TextView mDescription=mHomeServiceView.findViewById(R.id.job_description);
+            TextView mDescription=mTuiTionService.findViewById(R.id.job_description);
             mDescription.setText(descripton);
         }
 
         public void setDate(String date){
-            TextView mDate=mHomeServiceView.findViewById(R.id.job_post_Date);
+            TextView mDate=mTuiTionService.findViewById(R.id.job_post_Date);
             mDate.setText(date);
         }
 

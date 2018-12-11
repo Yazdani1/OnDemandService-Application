@@ -1,5 +1,6 @@
 package yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +13,8 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker.CatActivityDetailsJobPOST.CatITandSoftwareServiceDetailsActivity;
+import yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker.CatActivityDetailsJobPOST.CatTuiTionServiceDetailsActivity;
 import yazdaniscodelab.ondemandfinalproject.Model.PostJob;
 import yazdaniscodelab.ondemandfinalproject.R;
 
@@ -69,12 +72,29 @@ public class CatItandSoftwareJobActivity extends AppCompatActivity {
 
                 ) {
             @Override
-            protected void populateViewHolder(CatItandSoftwareJobActivity.MyViewHolder viewHolder, PostJob model, int position) {
+            protected void populateViewHolder(CatItandSoftwareJobActivity.MyViewHolder viewHolder,final PostJob model, int position) {
 
                 viewHolder.setDate(model.getDate());
                 viewHolder.setJobTitle(model.getTitle());
                 viewHolder.setJobDescription(model.getDescription());
                 viewHolder.setBudget(model.getBudget());
+
+                viewHolder.myview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent=new Intent(getApplicationContext(),CatITandSoftwareServiceDetailsActivity.class);
+
+                        intent.putExtra("budget",model.getBudget());
+                        intent.putExtra("phone",model.getPhone());
+                        intent.putExtra("title",model.getTitle());
+                        intent.putExtra("address",model.getAddress());
+                        intent.putExtra("startDate",model.getStartDate());
+                        intent.putExtra("endData",model.getEndDate());
+                        intent.putExtra("description",model.getDescription());
+
+                        startActivity(intent);
+                    }
+                });
 
             }
         };

@@ -1,8 +1,10 @@
 package yazdaniscodelab.ondemandfinalproject;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class TutionJobDetailsActivity extends AppCompatActivity {
@@ -15,6 +17,8 @@ public class TutionJobDetailsActivity extends AppCompatActivity {
     private TextView startDate;
     private TextView endDate;
     private TextView description;
+
+    private String mPhone;
 
 
     @Override
@@ -36,7 +40,7 @@ public class TutionJobDetailsActivity extends AppCompatActivity {
         Intent intent=getIntent();
 
         String mBudget=intent.getStringExtra("budget");
-        String mPhone=intent.getStringExtra("phone");
+        mPhone=intent.getStringExtra("phone");
         String mtitle=intent.getStringExtra("title");
         String mAddress=intent.getStringExtra("address");
         String mStartDate=intent.getStringExtra("startDate");
@@ -52,6 +56,14 @@ public class TutionJobDetailsActivity extends AppCompatActivity {
         description.setText(mDescription);
 
 
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+mPhone)));
+
+            }
+        });
 
 
     }

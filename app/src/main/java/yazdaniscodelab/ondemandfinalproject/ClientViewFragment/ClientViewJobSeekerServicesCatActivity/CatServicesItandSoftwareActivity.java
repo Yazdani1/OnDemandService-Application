@@ -1,5 +1,6 @@
 package yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,7 +13,10 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_ItandSoftwareServiceDetailsActivity;
+import yazdaniscodelab.ondemandfinalproject.ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_TuitionServiceDetailsActivity;
 import yazdaniscodelab.ondemandfinalproject.Model.PostJob;
+import yazdaniscodelab.ondemandfinalproject.Model.Services;
 import yazdaniscodelab.ondemandfinalproject.R;
 
 public class CatServicesItandSoftwareActivity extends AppCompatActivity {
@@ -60,21 +64,37 @@ public class CatServicesItandSoftwareActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<PostJob,CatServicesItandSoftwareActivity.MyViewHolder> adapter=new FirebaseRecyclerAdapter<PostJob, CatServicesItandSoftwareActivity.MyViewHolder>
+        FirebaseRecyclerAdapter<Services,CatServicesItandSoftwareActivity.MyViewHolder> adapter=new FirebaseRecyclerAdapter<Services, CatServicesItandSoftwareActivity.MyViewHolder>
                 (
-                        PostJob.class,
+                        Services.class,
                         R.layout.cat_item_layout_design,
                         CatServicesItandSoftwareActivity.MyViewHolder.class,
                         PublicItAndSoftwareCreateService
 
                 ) {
             @Override
-            protected void populateViewHolder(CatServicesItandSoftwareActivity.MyViewHolder viewHolder, PostJob model, int position) {
+            protected void populateViewHolder(CatServicesItandSoftwareActivity.MyViewHolder viewHolder, final Services model, int position) {
 
                 viewHolder.setDate(model.getDate());
                 viewHolder.setJobTitle(model.getTitle());
                 viewHolder.setJobDescription(model.getDescription());
                 viewHolder.setBudget(model.getBudget());
+
+                viewHolder.myview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent=new Intent(getApplicationContext(), Js_Cat_ItandSoftwareServiceDetailsActivity.class);
+
+                        intent.putExtra("title",model.getTitle());
+                        intent.putExtra("budget",model.getBudget());
+                        intent.putExtra("skills",model.getSkill());
+                        intent.putExtra("phone",model.getPhone());
+                        intent.putExtra("description",model.getDescription());
+                        startActivity(intent);
+
+                    }
+                });
 
             }
         };

@@ -1,5 +1,6 @@
 package yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,10 +14,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import yazdaniscodelab.ondemandfinalproject.CatActivityForJobSeeker.CatActivityDetailsJobPOST.CatHomeServiceDetailsActivity;
+import yazdaniscodelab.ondemandfinalproject.JobDetailsActivity;
 import yazdaniscodelab.ondemandfinalproject.Model.PostJob;
 import yazdaniscodelab.ondemandfinalproject.R;
 
 public class CatHomeServiceActivity extends AppCompatActivity {
+
+
+    //This File is for Category home service job post.,.,from this activity if user click any of the job then it will redirect to Cathomeservicedetails activity
 
     private DatabaseReference mHomeServiewDb;
 
@@ -67,12 +73,33 @@ public class CatHomeServiceActivity extends AppCompatActivity {
 
                 ) {
             @Override
-            protected void populateViewHolder(MyViewHolder viewHolder, PostJob model, int position) {
+            protected void populateViewHolder(MyViewHolder viewHolder,final PostJob model, int position) {
 
                 viewHolder.setDate(model.getDate());
                 viewHolder.setJobTitle(model.getTitle());
                 viewHolder.setJobDescription(model.getDescription());
                 viewHolder.setBudget(model.getBudget());
+
+                viewHolder.myview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent=new Intent(getApplicationContext(),CatHomeServiceDetailsActivity.class);
+
+
+                        intent.putExtra("budget",model.getBudget());
+                        intent.putExtra("phone",model.getPhone());
+                        intent.putExtra("title",model.getTitle());
+                        intent.putExtra("address",model.getAddress());
+                        intent.putExtra("startDate",model.getStartDate());
+                        intent.putExtra("endData",model.getEndDate());
+                        intent.putExtra("description",model.getDescription());
+
+                        startActivity(intent);
+
+
+                    }
+                });
 
             }
         };

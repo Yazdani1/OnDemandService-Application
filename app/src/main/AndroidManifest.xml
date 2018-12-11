@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="yazdaniscodelab.ondemandfinalproject">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,38 +24,33 @@
         <activity android:name=".ClientViewActivity.ClientViewHomeActivity" />
         <activity android:name=".JobDetailsActivity" />
         <activity android:name=".TutionJobDetailsActivity" />
-
-        <activity android:name=".CatActivityForJobSeeker.CatHomeServiceActivity"
-            android:parentActivityName=".HomeActivity"
-            />
-
-        <activity android:name=".CatActivityForJobSeeker.CatTutionServiceActivity"
-            android:parentActivityName=".HomeActivity"
-            />
-
-        <activity android:name=".CatActivityForJobSeeker.CatItandSoftwareJobActivity"
-            android:parentActivityName=".HomeActivity"
-            />
-
+        <activity
+            android:name=".CatActivityForJobSeeker.CatHomeServiceActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".CatActivityForJobSeeker.CatTutionServiceActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".CatActivityForJobSeeker.CatItandSoftwareJobActivity"
+            android:parentActivityName=".HomeActivity" />
         <activity android:name=".CatActivityForJobSeeker.CatActivityDetailsJobPOST.CatHomeServiceDetailsActivity" />
-
         <activity android:name=".CatActivityForJobSeeker.CatActivityDetailsJobPOST.CatTuiTionServiceDetailsActivity" />
-
         <activity android:name=".CatActivityForJobSeeker.CatActivityDetailsJobPOST.CatITandSoftwareServiceDetailsActivity" />
-
-        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesHomeServiceActivity"
-            android:parentActivityName=".ClientViewActivity.ClientViewHomeActivity"
-
-            />
-
-        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesTuitionServiceActivity"
-            android:parentActivityName=".ClientViewActivity.ClientViewHomeActivity"
-            />
-
-        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServicesItandSoftwareActivity"
-            android:parentActivityName=".ClientViewActivity.ClientViewHomeActivity"
-
-            />
+        <activity
+            android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesHomeServiceActivity"
+            android:parentActivityName=".ClientViewActivity.ClientViewHomeActivity" />
+        <activity
+            android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServciesTuitionServiceActivity"
+            android:parentActivityName=".ClientViewActivity.ClientViewHomeActivity" />
+        <activity
+            android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.CatServicesItandSoftwareActivity"
+            android:parentActivityName=".ClientViewActivity.ClientViewHomeActivity" />
+        <activity android:name=".ClientViewFragment.JobSeekerServiceDetailsActivity.Js_HomeServiceDetailsActivity" />
+        <activity android:name=".ClientViewFragment.JobSeekerServiceDetailsActivity.Js_TuitionServiceDetailsActivity" />
+        <activity android:name=".ClientViewFragment.JobSeekerServiceDetailsActivity.Js_ItandSoftwareServiceDetailsActivity" />
+        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_HomeServiceDetailsActivity" />
+        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_TuitionServiceDetailsActivity" />
+        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_ItandSoftwareServiceDetailsActivity"></activity>
     </application>
 
 </manifest>
