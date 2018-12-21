@@ -19,7 +19,7 @@
                 android:layout_height="150dp"
                 android:background="@drawable/bottombarbackdesign"
                 android:gravity="center"
-                android:text="Home Services"
+                android:text="It and Software Service"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@android:color/white"
                 />

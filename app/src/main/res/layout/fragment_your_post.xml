@@ -34,44 +34,44 @@
                         android:background="@drawable/post_btn_onedesign"
                         android:layout_height="wrap_content" />
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_margin="10dp"
-                        android:padding="10dp"
-                        android:text="To-Let Service"
-                        android:id="@+id/to_let_Service"
-                        android:textColor="@android:color/white"
-                        android:textAppearance="?android:textAppearanceMedium"
-                        android:background="@drawable/post_btn_onedesign"
-                        android:layout_height="wrap_content" />
+                    <!--<Button-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_margin="10dp"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:text="To-Let Service"-->
+                        <!--android:id="@+id/to_let_Service"-->
+                        <!--android:textColor="@android:color/white"-->
+                        <!--android:textAppearance="?android:textAppearanceMedium"-->
+                        <!--android:background="@drawable/post_btn_onedesign"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+                    <!--<Button-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_margin="10dp"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:text="Food Service"-->
+                        <!--android:id="@+id/food_service"-->
+                        <!--android:textColor="@android:color/white"-->
+                        <!--android:textAppearance="?android:textAppearanceMedium"-->
+                        <!--android:background="@drawable/post_btn_onedesign"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+                    <!--<Button-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_margin="10dp"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:text="Parcel Service"-->
+                        <!--android:id="@+id/parcel_service"-->
+                        <!--android:textColor="@android:color/white"-->
+                        <!--android:textAppearance="?android:textAppearanceMedium"-->
+                        <!--android:background="@drawable/post_btn_onedesign"-->
+                        <!--android:layout_height="wrap_content" />-->
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_margin="10dp"
                         android:padding="10dp"
-                        android:text="Food Service"
-                        android:id="@+id/food_service"
-                        android:textColor="@android:color/white"
-                        android:textAppearance="?android:textAppearanceMedium"
-                        android:background="@drawable/post_btn_onedesign"
-                        android:layout_height="wrap_content" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_margin="10dp"
-                        android:padding="10dp"
-                        android:text="Parcel Service"
-                        android:id="@+id/parcel_service"
-                        android:textColor="@android:color/white"
-                        android:textAppearance="?android:textAppearanceMedium"
-                        android:background="@drawable/post_btn_onedesign"
-                        android:layout_height="wrap_content" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_margin="10dp"
-                        android:padding="10dp"
-                        android:text="Tution Service"
+                        android:text="Part time jon for Students"
                         android:id="@+id/tution_service"
                         android:textColor="@android:color/white"
                         android:textAppearance="?android:textAppearanceMedium"

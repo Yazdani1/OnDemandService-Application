@@ -33,7 +33,7 @@ public class CatTutionServiceActivity extends AppCompatActivity {
 
         toolbar=findViewById(R.id.cat_home_service);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Tuition Service");
+        getSupportActionBar().setTitle("Part time job for Students");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 

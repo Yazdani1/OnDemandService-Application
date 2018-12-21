@@ -35,7 +35,7 @@ public class YourPostFragment extends Fragment {
         View myview = inflater.inflate(R.layout.fragment_your_post, container, false);
 
         home_service=myview.findViewById(R.id.home_Service_cat);
-        food_service=myview.findViewById(R.id.food_service);
+        //food_service=myview.findViewById(R.id.food_service);
         tution_service=myview.findViewById(R.id.tution_service);
 
         homeServiceFragment=new HomeServiceFragment();

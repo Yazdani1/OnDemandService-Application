@@ -19,7 +19,17 @@
             android:layout_marginTop="10dp"
             android:layout_height="match_parent">
 
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:textColor="@android:color/white"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:text="Home Service Categories"
+                android:background="@drawable/bottombarbackdesign"
+                />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

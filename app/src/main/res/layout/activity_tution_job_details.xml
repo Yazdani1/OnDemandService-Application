@@ -19,7 +19,7 @@
                 android:layout_height="150dp"
                 android:background="@drawable/bottombarbackdesign"
                 android:gravity="center"
-                android:text="Home Service Job Details"
+                android:text="Part time job for Students"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@android:color/white"
                 />
