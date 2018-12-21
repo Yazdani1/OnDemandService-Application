@@ -102,16 +102,16 @@ public class YourAllServiceFragment extends Fragment {
 
 
 
-        FirebaseRecyclerAdapter<Services,Allservice_HomeService>tutionServiceAdapter=new FirebaseRecyclerAdapter<Services, Allservice_HomeService>
+        FirebaseRecyclerAdapter<Services,Allservice_TutionService>tutionServiceAdapter=new FirebaseRecyclerAdapter<Services, Allservice_TutionService>
                 (
                         Services.class,
                         R.layout.all_service_data_own_item,
-                        Allservice_HomeService.class,
+                        Allservice_TutionService.class,
                         tutionservice
 
                 ) {
             @Override
-            protected void populateViewHolder(Allservice_HomeService viewHolder, Services model, int position) {
+            protected void populateViewHolder(Allservice_TutionService viewHolder, Services model, int position) {
                 viewHolder.setTitle(model.getTitle());
                 viewHolder.setDescripton(model.getDescription());
                 viewHolder.setDate(model.getDate());
