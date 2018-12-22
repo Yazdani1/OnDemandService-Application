@@ -50,7 +50,9 @@
         <activity android:name=".ClientViewFragment.JobSeekerServiceDetailsActivity.Js_ItandSoftwareServiceDetailsActivity" />
         <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_HomeServiceDetailsActivity" />
         <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_TuitionServiceDetailsActivity" />
-        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_ItandSoftwareServiceDetailsActivity"></activity>
+        <activity android:name=".ClientViewFragment.ClientViewJobSeekerServicesCatActivity.JobSeekerServicesCatDetails.Js_Cat_ItandSoftwareServiceDetailsActivity" />
+        <activity android:name=".ClientViewFragment.UpdatenadDeleteYourAllJobPOST.HomeService_UPDActivity" />
+        <activity android:name=".ClientViewFragment.UpdatenadDeleteYourAllJobPOST.TuitionServiceUPDActivity"></activity>
     </application>
 
 </manifest>

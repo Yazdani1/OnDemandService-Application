@@ -232,7 +232,6 @@ public class HomeServiceFragment extends Fragment {
                 job_start_date.setText(date_start);
 
 
-
             }
         };
 
@@ -252,6 +251,11 @@ public class HomeServiceFragment extends Fragment {
 
             }
         };
+
+
+        //date picker
+
+
 
 
 
